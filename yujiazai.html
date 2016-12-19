@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>js预加载</title>
+    </head>
+    <script>
+        //针对firefox
+        window.addEventListener("DOMContentLoaded", preloadImages);
+        //创建图片数据
+        var imageArray = new Array("http://bizhi.zhuoku.com/2010/10/22/kuanping/kuanping39.jpg", "http://img1.3lian.com/2015/w7/90/d/5.jpg");
+
+        preloadImages(imageArray);
+
+        function preloadImages(imageArray) {
+            for(var i = 0; i < imageArray.length; i++) {
+                //创建图片对象
+                var tempImage = new Image();
+                //填充图片
+                tempImage.src = imageArray[i];
+                document.write('<img src="' + imageArray[i] + '" />');
+            }
+        }
+    </script>
+
+    <body>
+    </body>
+
+</html>
